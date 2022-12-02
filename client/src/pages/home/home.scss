@@ -1,0 +1,61 @@
+@import "../../style.scss";
+
+.home {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    padding: 20px;
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+  }
+
+  .scrollButton {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.3s all linear;
+    cursor: pointer;
+
+    .btn {
+      padding: 5px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.1s all linear;
+      font-size: 17px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+      }
+
+      &.backward {
+        &:hover {
+          transform: translateX(-4px);
+        }
+      }
+
+      &.forward {
+        &:hover {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: lightgrey;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 34px;
+  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+}

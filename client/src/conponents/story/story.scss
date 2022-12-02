@@ -1,0 +1,239 @@
+:root {
+  --pseudo-text: "";
+}
+
+.story {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 999;
+
+  .quantity {
+    position: absolute;
+    top: 4%;
+    left: 34.5%;
+    width: 30vw;
+    height: 5px;
+    z-index: 1;
+    border-radius: 34px;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    .active {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 34px;
+      background-color: #fff;
+      transition: 0.3s all linear;
+    }
+  }
+
+  .container {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 39vw;
+    height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      .info {
+        position: absolute;
+        top: 6%;
+        left: 11.5%;
+        width: 76%;
+        height: 50px !important;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .left {
+          height: inherit;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+        }
+
+        .right {
+          width: 67%;
+          color: white;
+
+          .name {
+            font-size: 17px;
+            font-weight: 600;
+
+            .duration {
+              font-size: 13px;
+              font-weight: 300;
+            }
+          }
+        }
+
+        .play {
+          width: 18%;
+          color: white;
+          display: flex;
+          gap: 5px;
+
+          .item{
+            cursor: pointer;
+            // font-size: 28px;
+          }
+        }
+      }
+
+      .top {
+        width: 80%;
+        height: 90vh;
+        align-items: center;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 10px;
+
+        display: flex;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+
+      .bot {
+        width: 39vw;
+        height: 10vh;
+        background: transparent;
+        display: flex;
+        gap: 20px;
+
+        input {
+          width: 40%;
+          padding: 0px 10px;
+          margin: 3% 0;
+          border-radius: 34px;
+          background: #000;
+          border: 2px solid #eee;
+          color: white;
+
+          &:focus {
+            // border: 2px solid #eee !important;
+          }
+        }
+
+        .reaction {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2%;
+
+          .icon {
+            // width: 35px;
+            // height: 35px;
+            width: 15%;
+            height: 50%;
+            cursor: pointer;
+            transition: 0.1s all linear;
+            position: relative;
+
+            &:hover {
+              // transform: scale(1.2);
+              transform: scale(1.1) translateY(-10%);
+            }
+
+            &::before {
+              content: "dasdjhasfdahsgdghas";
+              position: absolute;
+              width: 200px;
+              height: 20px;
+              bottom: 0;
+              left: 10px;
+              background-color: white;
+              color: red;
+              z-index: 999;
+            }
+          }
+        }
+      }
+
+      .desc {
+        position: absolute;
+        top: 75%;
+        left: 20%;
+        transform: rotate(-15deg);
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .button {
+    color: black;
+    background: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 1% 0 0 2%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s all linear;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .sliceBtn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px;
+    border-radius: 50%;
+    top: 48%;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.2s all linear;
+
+    &.backward {
+      left: 28%;
+
+      &:hover {
+        left: 27.7%;
+        background-color: white;
+      }
+    }
+
+    &.forward {
+      right: 28%;
+
+      &:hover {
+        right: 27.7%;
+        background-color: white;
+      }
+    }
+  }
+}

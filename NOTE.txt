@@ -1,0 +1,22 @@
+There are 3 ways to send PARAM to Be : 
+
+1. through query    => req.query.?
+
+    makeRequest.get("/comments?postId=" + postId)
+        => req.query.postID
+
+
+2. through body     => req.body.?
+
+    makeRequest.post("/comments", postId);
+        => req.body.postId
+
+
+3. through params   => req.params.?
+
+    makeRequest.get("/users/find/" + info.userId)            this route required : "/find/:userId"
+        => req.params.userId
+
+
+--------- 1 + 2 : pass param through QUERY ---------
+--------- 3 : pass param through PARAMS ---------

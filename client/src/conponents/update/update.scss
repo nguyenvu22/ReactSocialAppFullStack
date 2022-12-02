@@ -1,0 +1,143 @@
+.update {
+  background-color: rgba(0, 0, 0, 0.186);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+
+  .container {
+    position: absolute;
+    top: 15%;
+    left: 19%;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      // flex-direction: column;
+      padding: 10px;
+
+      .item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-weight: 500;
+        margin-bottom: 25px;
+        position: relative;
+
+        &:focus-within {
+          align-items: flex-start;
+
+          .span {
+            position: absolute;
+            top: -30%;
+            left: 0;
+            width: 10%;
+            font-size: 12px;
+            color: gray;
+          }
+
+          input {
+            width: 85%;
+          }
+        }
+
+        .span {
+          width: 15%;
+          transition: 0.3s linear;
+        }
+
+        input {
+          width: 70%;
+          padding: 7px 0;
+          border: none;
+          border-bottom: 1px solid lightgray;
+          font-weight: 400;
+          font-size: 13px;
+          margin-left: 18px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .inputImg {
+          display: none;
+        }
+
+        label {
+          width: 33%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        img {
+          width: 30%;
+          object-fit: cover;
+        }
+      }
+
+      button {
+        width: 16%;
+        padding: 10px 5px;
+        margin: auto;
+        margin-top: 30px;
+        border: 2px solid #4caf50;
+        color: #4caf50;
+        background-color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: 0.2s linear;
+
+        &:hover {
+          color: white;
+          background-color: #4caf50;
+          transition: 0.2s linear;
+        }
+      }
+    }
+
+    .closeBtn {
+      position: absolute;
+      top: 5%;
+      right: 2.5%;
+      width: 35px;
+      height: 35px;
+      border: 2px solid #f0544f;
+      color: #f0544f;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.2s linear;
+
+      &:hover {
+        color: white;
+        background-color: #f0544f;
+        transition: 0.2s linear;
+      }
+    }
+  }
+}

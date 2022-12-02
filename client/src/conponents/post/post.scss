@@ -1,0 +1,121 @@
+@import "../../style.scss";
+
+.post {
+  @include themify($themes) {
+    box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    .container {
+      padding: 20px;
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .userInfo {
+          display: flex;
+          gap: 20px;
+
+          img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .details {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+              font-weight: 600;
+              font-size: 17px;
+            }
+
+            .date {
+              font-size: 13px;
+            }
+          }
+        }
+
+        .icon {
+          font-size: 35px;
+          cursor: pointer;
+        }
+
+        .deldeteBtn {
+          position: absolute;
+          top: -15%;
+          right: 5%;
+          height: auto;
+          width: 15%;
+          border-radius: 10px;
+          padding: 10px 0;
+          overflow: hidden;
+          border: 0.5px solid lightgray;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          background-color: white;
+
+          button {
+            cursor: pointer;
+            padding: 8px 20px;
+            background-color: white;
+            border: none;
+            border-top: 0.5px solid transparent;
+            border-bottom: 0.5px solid transparent;
+            transition: 0.1s linear;
+            font-size: 14px;
+
+            &:hover {
+              // border-top: 0.5px solid lightgray;
+              // border-bottom: 0.5px solid lightgray;
+              font-weight: bold;
+              transition: 0.1s linear;
+
+              &:nth-child(2n) {
+                color: #5271ff;
+              }
+              &:nth-child(2n + 1) {
+                color: #f0544f;
+              }
+              &:last-of-type {
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+
+      .content {
+        margin: 20px 0;
+
+        img {
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+          margin-top: 20px;
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

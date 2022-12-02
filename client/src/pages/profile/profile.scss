@@ -1,0 +1,182 @@
+@import "../../style.scss";
+
+.profile {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    padding-left: 20px;
+
+    @include mobile {
+      padding-right: 20px;
+    }
+
+    @include tablet {
+      padding-right: 20px;
+    }
+
+    .images {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+
+      .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+
+      .profilePic {
+        position: absolute;
+        left: 37.5%;
+        bottom: -27%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        @include mobile {
+          left: 30%;
+          bottom: -30%;
+        }
+
+        @include tablet {
+          left: 35%;
+          bottom: -30%;
+        }
+      }
+    }
+
+    .profileContainer {
+      padding: 40px 70px;
+
+      @include mobile {
+        padding: 10px;
+        margin-bottom: 30px;
+      }
+
+      @include tablet {
+        padding: 40px 5px;
+      }
+
+      .uInfo {
+        height: 180px;
+        box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.38);
+        border-radius: 20px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        padding: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        @include mobile {
+          flex-direction: column;
+          height: 30vh;
+          padding: 20px;
+          margin-top: 100px;
+        }
+
+        .left {
+          flex: 1;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 10px;
+
+          @include tablet {
+            flex-wrap: wrap;
+          }
+
+          a {
+            color: themed("textColorSoft");
+          }
+        }
+
+        .center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+
+          span {
+            font-size: 30px;
+            font-weight: 500;
+            text-align: center;
+          }
+
+          .info {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .item {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              color: themed("textColorSoft");
+
+              span {
+                font-size: 12px;
+              }
+            }
+          }
+
+          button {
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 120px;
+            margin: 3px;
+            // border: 3px solid black;
+          }
+
+          .btnUpdate {
+            background-color: rgb(14, 186, 14);
+
+            &:hover {
+              margin: 0px;
+              border: 3px solid rgb(11, 238, 11);
+            }
+          }
+
+          .btnFollowing {
+            background-color: #5271ff;
+            
+            &:hover{
+              margin: 0px;
+              border: 3px solid #ed211a;
+              background-color: #f0544f;
+            }
+          }
+
+          .btnFollow {
+            background-color: #5271ff;
+
+            &:hover{
+              margin: 0px;
+              border: 3px solid #637ef8;
+            }
+          }
+        }
+
+        .right {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
