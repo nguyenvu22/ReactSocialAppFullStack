@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { makeRequest } from "../../axios";
 import { AuthContext } from "../../context/authContext";
 import "./rightBar.scss";
+import { Link } from "react-router-dom";
 
 const Rightbar = () => {
   const { currentUser } = useContext(AuthContext);
@@ -118,7 +119,9 @@ const Rightbar = () => {
         </div>
 
         <div className="item">
-          <span>Online Friends</span>
+          <Link to="/chat" style={{ cursor: "pointer", textDecoration: "none" }}>
+            <span>Online Friends</span>
+          </Link>
           <div className="user">
             <div className="userInfo">
               <img

@@ -16,9 +16,11 @@
     "node-sass": "^8.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-input-emoji": "^4.3.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.6",
+    "socket.io-client": "^4.5.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

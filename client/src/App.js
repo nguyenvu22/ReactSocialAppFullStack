@@ -16,6 +16,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/authContext";
 import { DarkModeContext } from "./context/darkModeContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Chat from "./pages/chat/Chat";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -29,7 +30,7 @@ function App() {
     return children;
   };
 
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient();
 
   const Layout = () => {
     return (
@@ -43,6 +44,17 @@ function App() {
             </div>
             <Rightbar />
           </div>
+        </div>
+      </QueryClientProvider>
+    );
+  };
+
+  const ChatLayout = () => {
+    return (
+      <QueryClientProvider client={queryClient}>
+        <div className={`theme-${darkMode ? "dark" : "light"}`}>
+          <Navbar />
+          <Chat />
         </div>
       </QueryClientProvider>
     );
@@ -78,6 +90,14 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/chat",
+      element: (
+        <ProtectedRoute>
+          <ChatLayout />
+        </ProtectedRoute>
+      ),
     },
   ]);
 

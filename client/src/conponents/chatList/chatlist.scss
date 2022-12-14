@@ -1,0 +1,97 @@
+.chatlist {
+  flex: 2;
+  //   background-color: red;
+
+  .chatListContainer {
+    margin: 20px;
+    height: 85.5vh;
+    border-radius: 34px;
+    background-color: white;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+      rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+    input {
+      width: 80%;
+      padding: 4%;
+      margin-top: 5%;
+      margin-left: 5%;
+      border: none;
+      border-bottom: 2px solid lightgray;
+      background-color: transparent;
+      font-weight: 500;
+      font-size: 19px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .friends {
+      padding-top: 20px;
+      height: 66vh;
+      overflow: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      // position: relative;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .friend {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 70px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: relative;
+
+        .img {
+          position: relative;
+
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            position: absolute;
+            bottom: 10%;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #31a24c;
+            border: 2px solid #eee;
+          }
+        }
+
+        p {
+          width: 55%;
+          padding-left: 5%;
+          font-weight: 500;
+        }
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+            rgba(17, 17, 26, 0.1) 0px 0px 8px;
+        }
+      }
+    }
+
+    .showmore {
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

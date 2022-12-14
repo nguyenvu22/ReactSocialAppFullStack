@@ -1,0 +1,167 @@
+.messages {
+  flex: 5;
+
+  .messagesContainer {
+    margin: 20px;
+    height: 80vh;
+    border-radius: 34px;
+    background-color: white;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+      rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    padding: 20px;
+
+    display: flex;
+
+    .left {
+      width: 75%;
+      border-right: 1px solid lightgray;
+
+      .info {
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+        border-bottom: 2px solid lightgray;
+
+        .avatar {
+          position: relative;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            content: "";
+            position: absolute;
+            bottom: 10%;
+            right: -8%;
+            width: 13px;
+            height: 13px;
+            border: 2px solid #eee;
+            border-radius: 50%;
+            background-color: #31a24c;
+          }
+        }
+
+        p {
+          width: 60%;
+          font-weight: 500;
+        }
+
+        .more {
+          width: 30%;
+          display: flex;
+          gap: 10px;
+          justify-content: flex-end;
+          color: #0084ff;
+
+          .icon {
+            padding: 5px;
+            transition: 0.2s all linear;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.1);
+              border-radius: 50%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .message {
+        height: 68%;
+        padding: 20px 0;
+        overflow-y: scroll;
+        // background-image: url("https://freepngimg.com/save/158658-chat-icon-hq-image-free/980x904");
+        // background-size: contain;
+        // background-repeat: no-repeat;
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+        }
+
+        .single {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          .bubbleChat {
+            max-width: 60%;
+
+            p {
+              background-color: rgba(0, 0, 0, 0.07);
+              padding: 15px;
+              border-radius: 10px;
+              cursor: pointer;
+            }
+          }
+
+          .time {
+            align-self: center;
+            font-size: 12px;
+            color: gray;
+          }
+
+          &.me {
+            flex-direction: row-reverse;
+          }
+        }
+
+        .none {
+          font-size: 50px;
+          color: rgba(128, 128, 128, 0.419);
+          text-align: center;
+          line-height: 50vh;
+        }
+      }
+
+      .text {
+        height: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        // gap: 10px;
+
+        .react-input-emoji--button svg {
+          fill: black;
+        }
+
+        .react-input-emoji--input {
+          border: 1px solid #111;
+          border-radius: 34px;
+        }
+
+        .icon {
+          width: 10%;
+          cursor: pointer;
+          transition: 0.1s all linear;
+
+          &:hover {
+            color: #0084ff;
+            font-size: 28px;
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 25%;
+      border-left: 1px solid lightgray;
+    }
+  }
+}

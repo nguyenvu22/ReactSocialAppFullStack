@@ -21,7 +21,7 @@ export const updateUser = (req, res) => {
     if (err) return res.status(403).json("Invalid Token!");
 
     const query =
-      "UPDATE users SET `name`=?, `city`=?, `website`=?,`coverPic`=?, `profilePic`=? WHERE `id`=?";
+      "UPDATE users SET `name`= ?, `city`= ?, `website`= ?,`coverPic`= ?, `profilePic`= ? WHERE `id`= ?";
 
     db.query(
       query,
@@ -46,6 +46,21 @@ export const getUnfollowUser = (req, res) => {
   const query =
     "SELECT * FROM users WHERE id NOT IN(SELECT r.followedUserId FROM users AS u JOIN relationships AS r ON (u.id = r.followerUserId AND r.followerUserId = ? ))";
   db.query(query, [req.query.followerId], (err, data) => {
+    if (err) return res.status(500).json(err);
+    return res.status(200).json(
+      data.map((item) => {
+        const { password, ...others } = item;
+        return others;
+      })
+    );
+  });
+};
+
+export const getFollowedUser = (req, res) => {
+  const query =
+    "SELECT u.* FROM relationships AS r JOIN users AS u ON (u.id = r.followedUserId) WHERE r.followerUserId = ?";
+
+  db.query(query, [req.query.currentUserId], (err, data) => {
     if (err) return res.status(500).json(err);
     return res.status(200).json(
       data.map((item) => {

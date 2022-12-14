@@ -11,6 +11,8 @@ import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 import relationshipRoutes from "./routes/relationships.js";
 import storyRoutes from "./routes/stories.js";
+import conversationRoutes from "./routes/conversations.js";
+import messageRoutes from "./routes/messages.js";
 
 //middlewware
 //config whhile using credential:true
@@ -52,6 +54,8 @@ app.use("/api/comments", commentRoutes);
 app.use("/api/likes", likeRoutes);
 app.use("/api/relationships", relationshipRoutes);
 app.use("/api/stories", storyRoutes);
+app.use("/api/conversation", conversationRoutes);
+app.use("/api/message", messageRoutes);
 
 app.listen(8800, () => {
   console.log("API working!");

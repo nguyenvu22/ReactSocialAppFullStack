@@ -75,7 +75,7 @@ const Stories = () => {
           <button></button>
           <span className="addStory">Add Story</span>
         </div>
-        {isLoading ? (
+        {isLoading || error ? (
           <ClockLoader
             color="#36d7b7"
             size={100}
